@@ -22,7 +22,7 @@ class Sensor {
         } else if (status === 'off') {
             this.powerStatus = 'off';
         } else {
-            return error('status did not change');
+            throw new Error('status did not change')
         }
     }
 }
