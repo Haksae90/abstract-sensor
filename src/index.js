@@ -22,7 +22,7 @@ class Sensor {
         } else if (status === 'off') {
             this.powerStatus = 'off';
         } else {
-            throw new Error('status did not change')
+            throw new Error('status did not change');
         }
     }
 }
@@ -31,7 +31,7 @@ class IotServer {
     constructor() {
         this.workingSensor = [];
     }
-    
+
     start(sensor) {
         this.workingSensor.push(...sensor);
     }
