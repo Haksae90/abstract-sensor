@@ -38,12 +38,8 @@ class IotServer {
 
     publish({ deviceId, actionId, payload }) {
         for (const sensor of this.workingSensor) {
-            if (sensor.id === deviceId) {
-                if (sensor.powerStatus === 'on') {
-                    if (actionId === 'CHANGE_REPORTING_INTERVAL') {
-                        return (sensor.reportingInterval = payload);
-                    }
-                }
+            if (sensor.id === deviceId && sensor.powerStatus === 'on' && actionId === 'CHANGE_REPORTING_INTERVAL') {
+                return (sensor.reportingInterval = payload);
             }
         }
     }
